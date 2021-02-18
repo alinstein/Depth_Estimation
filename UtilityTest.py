@@ -27,7 +27,7 @@ class DepthDataset(Dataset):
 
     def __getitem__(self, idx):
         
-        img_name = os.path.join(self.root_dir,os.listdir(self.root_dir)[idx])
+        img_name = os.path.join(self.root_dir,sorted(os.listdir(self.root_dir))[idx])
         image = (Image.open(img_name))
 
         sample1={'image': image}
